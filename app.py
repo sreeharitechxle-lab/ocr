@@ -214,7 +214,7 @@ def index():
 
 @app.route("/save", methods=["POST"])
 def save_data():
-    if not collection:
+    if collection is None:
         flash("Database not available")
         return render_template("index.html", data=None)
         
@@ -240,7 +240,7 @@ def save_data():
 
 @app.route("/view_data")
 def view_data():
-    if not collection:
+    if collection is None:
         flash("Database not available")
         return render_template("index.html", data=None)
         
@@ -255,7 +255,7 @@ def view_data():
 
 @app.route("/export_excel")
 def export_excel():
-    if not collection:
+    if collection is None:
         flash("Database not available")
         return render_template("view_data.html", records=[])
         
@@ -285,7 +285,7 @@ def export_excel():
 
 @app.route("/edit/<id>", methods=["POST"])
 def edit_record(id):
-    if not collection:
+    if collection is None:
         flash("Database not available")
         return redirect(url_for('view_data'))
         
@@ -312,7 +312,7 @@ def edit_record(id):
 
 @app.route("/delete/<id>")
 def delete_record(id):
-    if not collection:
+    if collection is None:
         flash("Database not available")
         return redirect(url_for('view_data'))
         
