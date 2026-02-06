@@ -1,13 +1,9 @@
-venv
 __pycache__
 *.pyc
 .git
 .gitignore
-data.csv
-uploads/*
-!uploads/.gitkeep
+README.md
+.env
+.venv
+venv
 .qodo
-brain
-task.md
-implementation_plan.md
-walkthrough.md
